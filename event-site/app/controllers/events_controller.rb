@@ -70,6 +70,6 @@ class EventsController < ApplicationController
                                                                     :agenda,
                                                                     :address,
                                                                     :organizer_id,
-                                                                    :event_tag_strip)
+                                                                    :all_tags)
     end
 end

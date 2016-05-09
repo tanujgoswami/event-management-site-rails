@@ -6,9 +6,14 @@ class Event < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
-  def event_tag_strip=(names)
+  def all_tags
+    self.tags.map(&:name).join(", ")
+  end
+
+  def all_tags=(names)
     self.tags = names.split(",").map do |t|
       Tag.where(name: t.strip).first_or_create!
     end
   end
+  
 end
