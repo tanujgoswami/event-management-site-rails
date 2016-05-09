@@ -1,0 +1,4 @@
+en:
+  time:
+    formats:
+      date_format: "%m/%d/%Y"
