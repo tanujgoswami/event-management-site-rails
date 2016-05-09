@@ -1,14 +1,14 @@
 class EventsController < ApplicationController
   before_filter :authenticate_user!
-  before_action :event_owner!, only: [:edit, :update, :destroy]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :event_owner!, only: [:edit, :update, :destroy]
 
   def index
     if params[:tag]
       @events = Event.tagged_with(params[:tag])
     else
       @events = Event.all
-    end 
+    end
   end
 
   def show
