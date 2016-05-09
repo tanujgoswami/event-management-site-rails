@@ -63,6 +63,15 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def event_owner!
+    authenticate_user!
+    if @event.organizer_id != current_user.id
+      redirect_to events_path
+      flash[:notice] = "You do not have the permission to either edit or delete this event posting"
+    end 
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
