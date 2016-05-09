@@ -1,5 +1,7 @@
 class EventsController < ActionController::Base
 
+  before_filter :authenticate_user!
+
   def create
     @event = current_user.organized_events.new(event_params)
     respond_to do |format|
@@ -10,7 +12,7 @@ class EventsController < ActionController::Base
         format.html { render action: 'new' }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
-    end  
+    end
   end
 
   private
