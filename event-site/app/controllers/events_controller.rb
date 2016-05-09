@@ -1,10 +1,14 @@
 class EventsController < ApplicationController
   before_filter :authenticate_user!
-  before_action :event_owner!, only: [:edit, :update, :destroy]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :event_owner!, only: [:edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    if params[:tag]
+      @events = Event.tagged_with(params[:tag])
+    else
+      @events = Event.all
+    end
   end
 
   def show
@@ -66,6 +70,10 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:title, :start_date, :end_date, :location, :agenda, :address, :organizer_id)
+      params.require(:event).permit(:title, :start_date, :end_date, :location,
+                                                                    :agenda,
+                                                                    :address,
+                                                                    :organizer_id,
+                                                                    :all_tags)
     end
 end

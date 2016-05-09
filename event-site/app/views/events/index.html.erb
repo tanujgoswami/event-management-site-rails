@@ -2,6 +2,13 @@
 
 <h1>Listing Events</h1>
 
+<h3>Search Events by Tag</h3>
+  <div>
+    <% tag_cloud Event.tag_counts, %w{smallest-tag small-tag medium-tag large-tag} do |tag, size_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: size_class %>
+    <% end %>
+  </div>
+
 <table>
   <thead>
     <tr>
@@ -26,6 +33,7 @@
         <td><%= event.agenda %></td>
         <td><%= event.address %></td>
         <td><%= event.organizer_id %></td>
+        <td><%= event.all_tags.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
