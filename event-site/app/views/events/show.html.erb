@@ -37,7 +37,20 @@
 
 <% if @event.organizer_id == current_user.id %>
   <label>Join Requests</label>
-  <% if @pending_requests
+  <% if @pending_requests.present? %>
+    <% @pending_requests.each do |request| %>
+      <%= image_tag avatar_url(request.user) %>
+      <%= request.user.email %>
+      <%= link_to 'Accept', event_accept_request_path(event_id: @event.id,
+                                                     attendance_id: request.id
+                                                     ) %>
+      <%= link_to 'Reject', event_reject_request_path(event_id: @event.id,
+                                                      attendance_id: request.id
+                                                      ) %>
+    <% end %>
+  <% else %>
+      <span>There are no pending requests for this event</span>
+  <% end %>
 <% end %>
 
 <%= @event.all_tags %>
