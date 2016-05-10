@@ -26,3 +26,7 @@ class Event < ActiveRecord::Base
   def self.tagged_with(name)
     Tag.find_by_name!(name).events
   end
+
+  def self.owner(organizer_id)
+    User.find_by id: organizer_id
+  end

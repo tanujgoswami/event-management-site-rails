@@ -12,6 +12,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    event_organizer_id = @event.organizer_id
+    @organizer = User.find(event_organizer_id)
   end
 
   def new
@@ -23,10 +25,11 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-
+    @event.organizer_id = current_user.id
+    binding.pry
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to @event.id, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }

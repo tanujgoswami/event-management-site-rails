@@ -30,10 +30,10 @@
   <%= @event.address %>
 </p>
 
-<p>
-  <strong>Organizer:</strong>
-  <%= @event.organizer_id %>
-</p>
+<label>Organized By:</label><br/>
+  <%= image_tag avatar_url(@organizer) %>
+  <%= @organizer.email %>
+<br/>
 
 <%= @event.all_tags %>
 
