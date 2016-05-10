@@ -31,9 +31,8 @@
 </p>
 
 <label>Organized By:</label><br/>
-  <% @event_organizers.each do |organizer| %>
-  <%= image_tag avatar_url(organizer) %>
-  <%= organizer.email %>
+  <%= image_tag avatar_url(@organizer) %>
+  <%= @organizer.email %>
 <br/>
 
 <%= @event.all_tags %>

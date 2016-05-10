@@ -34,7 +34,7 @@
         <td><%= event.address %></td>
         <td><%= event.organizer_id %></td>
         <td><%= raw tag_links(event.all_tags) %></td>
-        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Show', event_path(event.id) %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
