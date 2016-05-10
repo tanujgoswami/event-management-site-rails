@@ -1,4 +1,6 @@
 class Attendance < ActiveRecord::Base
+  include Workflow
+  workflow_column :state
   belongs_to :event
   belongs_to :user
 
