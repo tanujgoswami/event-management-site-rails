@@ -17,4 +17,6 @@ class Attendance < ActiveRecord::Base
       state :rejected
     end
 
+  scope :accepted, -> {where(state: 'accepted')}
+
 end
