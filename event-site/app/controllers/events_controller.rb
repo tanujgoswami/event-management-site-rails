@@ -14,6 +14,8 @@ class EventsController < ApplicationController
   def show
     event_organizer_id = @event.organizer_id
     @organizer = User.find(event_organizer_id)
+
+    @pending_requests = @event.pending_requests
   end
 
   def new

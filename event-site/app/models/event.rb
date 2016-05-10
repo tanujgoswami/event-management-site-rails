@@ -32,3 +32,7 @@ class Event < ActiveRecord::Base
   def self.owner(organizer_id)
     User.find_by id: organizer_id
   end
+
+  def self.pending_requests(event_id)
+    Attendance.where(event_id: event_id, state: 'request_sent')
+  end

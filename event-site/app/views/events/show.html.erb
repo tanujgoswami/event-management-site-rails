@@ -35,6 +35,11 @@
   <%= @organizer.email %>
 <br/>
 
+<% if @event.organizer_id == current_user.id %>
+  <label>Join Requests</label>
+  <% if @pending_requests
+<% end %>
+
 <%= @event.all_tags %>
 
 <%= link_to 'Join Event', event_join_path(event_id: @event.id) %>
