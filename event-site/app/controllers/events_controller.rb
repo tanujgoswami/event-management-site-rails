@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_filter :authenticate_user!
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :accept_request, :reject_request]
   before_action :event_owner!, only: [:edit, :update, :destroy]
 
   def index
@@ -14,6 +14,10 @@ class EventsController < ApplicationController
   def show
     event_organizer_id = @event.organizer_id
     @organizer = User.find(event_organizer_id)
+
+    @pending_requests = @event.pending_requests
+
+    @accepted_attendees = @event.accepted_attendees
   end
 
   def new
@@ -26,7 +30,6 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.organizer_id = current_user.id
-    binding.pry
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event.id, notice: 'Event was successfully created.' }
@@ -62,6 +65,20 @@ class EventsController < ApplicationController
     @attendance = Attendance.join_event(current_user.id, params[:event_id], 'request_sent')
     'Request Sent' if @attendance.save
     respond_with @attendance
+  end
+
+  def accept_request
+    @attendance = Attendance.find_by(id: params[:attendance_id]) rescue nil
+    @attendance.accept!
+    'Applicant Accepted' if @attendance.save
+    respond_with(@attendance)
+  end
+
+  def reject_request
+    @attendance = Attendance.where(params[:attendance_id]) rescue nil
+    @attendance.reject!
+    'Applicant Rejected' if @attendance.save
+    respond_with(@attendance)
   end
 
   private
