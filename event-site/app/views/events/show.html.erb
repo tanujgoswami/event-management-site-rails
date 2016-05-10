@@ -37,5 +37,6 @@
 
 <%= @event.all_tags %>
 
+<%= link_to 'Join Event', event_join_path(event_id: @event.id) %>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
