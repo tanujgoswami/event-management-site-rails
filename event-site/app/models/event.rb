@@ -8,6 +8,14 @@ class Event < ActiveRecord::Base
   has_many :attendances
   has_many :users, through: :attendances
 
+  def pending_requests
+    Attendance.where(event_id: self.id, state: 'request_sent')
+  end
+
+  def accepted_attendees
+    Attendance.accepted.where(event_id: self.id)
+  end
+
   def all_tags
     tags.map(&:name).join(",")
   end
@@ -23,8 +31,6 @@ class Event < ActiveRecord::Base
     joins(:taggings).group("taggings.tag_id, tags.id, tags.name")
   end
 
-  end
-
   def self.tagged_with(name)
     Tag.find_by_name!(name).events
   end
@@ -33,10 +39,4 @@ class Event < ActiveRecord::Base
     User.find_by id: organizer_id
   end
 
-  def self.pending_requests(event_id)
-    Attendance.where(event_id: event_id, state: 'request_sent')
-  end
-
-  def self.accepted_attendees(event_id)
-    Attendance.accepted.where(event_id: event_id)
-  end
+end
