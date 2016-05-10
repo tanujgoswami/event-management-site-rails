@@ -5,6 +5,8 @@ class Event < ActiveRecord::Base
   belongs_to :organizers, class_name: "User"
   has_many :taggings
   has_many :tags, through: :taggings
+  has_many :attendances
+  has_many :users, through: :attendances
 
   def all_tags
     tags.map(&:name).join(",")
