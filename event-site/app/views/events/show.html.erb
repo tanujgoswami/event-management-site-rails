@@ -35,6 +35,12 @@
   <%= @organizer.email %>
 <br/>
 
+<label>Attendees</label>
+<% @accepted_attendees.each do |attendee| %>
+  <%= image_tag avatar_url(attendee.user) %>
+  <%= attendee.user.email %>
+<% end %>
+
 <% if @event.organizer_id == current_user.id %>
   <label>Join Requests</label>
   <% if @pending_requests.present? %>
