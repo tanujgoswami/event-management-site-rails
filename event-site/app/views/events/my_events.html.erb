@@ -1,6 +1,6 @@
 <h1>Displaying Your Organized Events</h1>
 
-<% @user_events.each do |event| %>
+<% @my_events.each do |event| %>
 <h3><%= event.title %></h3>
   <label>Start Date:</label>
     <%= l event.start_date, format: :date_format %>
