@@ -1,0 +1,18 @@
+<h1>Displaying Your Organized Events</h1>
+
+<% @user_events.each do |event| %>
+<h3><%= event.title %></h3>
+  <label>Start Date:</label>
+    <%= l event.start_date, format: :date_format %>
+  <label>End Date:</label>
+    <%= l event.end_date, format: :date_format %>
+  <label>Location</label>
+    <%= event.location %><br />
+  <label>Address:</label>
+    <%= event.address %><br />
+  <label>Agenda:</label>
+    <%= event.agenda %><br />
+  <label>Organized By:</label>
+    <%= event.owner %><br />
+  <%= image_tag avatar_url(event.owner) %><br />
+  <%= event.owner_email %><br />
