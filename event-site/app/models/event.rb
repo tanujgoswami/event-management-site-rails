@@ -8,6 +8,14 @@ class Event < ActiveRecord::Base
   has_many :attendances
   has_many :users, through: :attendances
 
+  def owner
+    User.find_by(id: self.organizer_id)
+  end
+
+  def owner_email
+    User.find_by(id: self.organizer_id).email
+  end
+
   def pending_requests
     Attendance.where(event_id: self.id, state: 'request_sent')
   end
@@ -33,10 +41,6 @@ class Event < ActiveRecord::Base
 
   def self.tagged_with(name)
     Tag.find_by_name!(name).events
-  end
-
-  def self.owner(organizer_id)
-    User.find_by id: organizer_id
   end
 
 end

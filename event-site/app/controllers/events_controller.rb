@@ -81,6 +81,10 @@ class EventsController < ApplicationController
     respond_with(@attendance)
   end
 
+  def my_events
+    @my_events = current_user.organized_events
+  end
+
   private
 
   def event_owner!
