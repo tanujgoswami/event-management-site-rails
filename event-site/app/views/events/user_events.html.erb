@@ -25,4 +25,8 @@
   <%= link_to 'Edit', edit_event_path(event) %>
   <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
-<% end %> 
+<% end %>
+
+<%= render partial: "tag_cloud.html.erb" %>
+
+<%= link_to 'Create an Event', new_event_path %>
