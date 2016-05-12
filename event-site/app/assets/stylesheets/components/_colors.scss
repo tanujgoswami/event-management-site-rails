@@ -1,0 +1,12 @@
+$bw-dark-primary: #00796b;
+$bw-primary: #009688;
+$bw-light-primary: #b2dfdb;
+$bw-black: #212121;
+$bw-grey: #727272;
+$bw-light-grey: #b6b6b6;
+
+//background colors
+
+@primary-background: @white;
+@secondary-background: @light-grey;
+@inverse-background: @bw-primary;
