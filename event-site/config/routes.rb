@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get :join, to: 'events#join', as: 'join'
     get :accept_request, to: 'events#accept_request', as: 'accept_request'
     get :reject_request, to: 'events#reject_request', as: 'reject_request'
-    get :my_events, to: 'events#my_events', as: 'my_events'
   end
+
+    resources :users, only: :show
 end

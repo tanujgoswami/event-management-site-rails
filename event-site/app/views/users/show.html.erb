@@ -20,13 +20,13 @@
   <h4>Tags:</h4>
   <%= raw tag_links(event.all_tags) %></br>
 
-  <%= link_to 'Show Details', event %>
+  <%= link_to 'Show Details', event_path(event.id) %>
   <% if event.organizer_id == current_user.id %>
-  <%= link_to 'Edit', edit_event_path(event) %>
-  <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_event_path(event.id) %>
+  <%= link_to 'Delete', event_path(event.id), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 <% end %>
 
-<%= render partial: "tag_cloud.html.erb" %>
+<%= render partial: "events/tag_cloud.html.erb" %>
 
 <%= link_to 'Create an Event', new_event_path %>
