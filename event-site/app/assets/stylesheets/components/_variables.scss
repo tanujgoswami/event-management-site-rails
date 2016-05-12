@@ -40,22 +40,20 @@ $secondary-background: $light-grey;
 $inverse-background: $em-primary;
 
 // text colours
-$primary-text: $dark-grey;
-$light-text: $light-grey;
-$loud-text: $black;
+$primary-text: $em-black;
+$light-text: $em-grey;
 $inverse-text: $white;
-$heading-text: $dark-grey;
+$heading-text: $em-primary;
 
 // link colours
-$primary-link-color: $red1;
-$primary-link-color-hover: $red2;
+$primary-link-color: $em-primary;
+$primary-link-color-hover: $em-dark-primary;
 
 // primary border properties
 $border-color: $light-grey;
 $border-size: 1px;
 $border-type: solid;
 $border-focus: $grey;
-$secondary-border-color: $blue1;
 
 // typography
 $body-copy: "Raleway", "Helvetica Neue", helvetica, arial, verdana, sans-serif;
