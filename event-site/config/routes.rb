@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     get :accept_request, to: 'events#accept_request', as: 'accept_request'
     get :reject_request, to: 'events#reject_request', as: 'reject_request'
   end
+
+    resources :users, only: :show
 end
