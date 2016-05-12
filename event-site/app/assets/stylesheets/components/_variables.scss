@@ -53,16 +53,22 @@ $primary-link-color-hover: $em-dark-primary;
 $border-color: $light-grey;
 $border-size: 1px;
 $border-type: solid;
-$border-focus: $grey;
+$border-focus: $em-primary;
 
 // typography
-$body-copy: "Raleway", "Helvetica Neue", helvetica, arial, verdana, sans-serif;
+$body-copy: "Source Sans Pro", helvetica, arial, verdana, sans-serif;
 $heading-copy: "Raleway", "Helvetica Neue", helvetica, arial, verdana, sans-serif;
-$heading-copy-bold: "Helvetica Neue", helvetica, arial, verdana, sans-serif;
-$base-font-size: 14px;
+$base-font-size: 16px;
 $font-size: 1em;
 $base-line-height: 1.5;
 
 // layout
 $margin: 1em;
 $padding: 1em;
+
+// round corners or Border radius
+   @mixin round-corners($radius: 5px) {
+     -moz-border-radius: $radius;
+     -ms-border-radius: $radius;
+     border-radius: $radius;
+}
