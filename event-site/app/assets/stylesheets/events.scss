@@ -26,3 +26,11 @@
 .header-nav {
   margin-bottom: ($margin * 2);
 }
+
+.header ul {
+  margin-bottom: 0;
+}
+
+header ul.list-inline li {
+  margin-right: ($margin * 1.25);
+}
