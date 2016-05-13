@@ -4,9 +4,9 @@
   </header>
   <ol class="list-group">
     <% @events.each do |event| %>
-      <li class="list-group-item">
+      <li class="list-group-item clearfix">
+        <h3 class="pull-right">Posted At: <%= l event.created_at.to_date %></h3>
         <h2><%= event.title %></h2>
-        <h3><%= l event.created_at.to_date %></h3>
         <h4><%= event.owner %></h4>
       </li>
     <% end %>
