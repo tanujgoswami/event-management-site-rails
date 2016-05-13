@@ -36,3 +36,11 @@
 header ul.list-inline li {
   margin-right: ($margin * 1.25);
 }
+
+//FOOTER STYLING
+
+.footer {
+  text-align: center;
+  color: $inverse-text;
+  padding-top: ($padding * 4);
+}
