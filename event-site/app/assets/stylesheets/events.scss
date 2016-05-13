@@ -13,3 +13,8 @@
 .header {
   margin-top: ($margin * 2);
 }
+
+.header a {
+  color: $em-black;
+  font-weight: bold;
+}
