@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510201706) do
+ActiveRecord::Schema.define(version: 20160513015201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20160510201706) do
     t.datetime "updated_at",   null: false
     t.string   "slug"
   end
+
+  add_index "events", ["title"], name: "index_events_on_title", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
