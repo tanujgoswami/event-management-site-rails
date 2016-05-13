@@ -47,13 +47,16 @@ header ul.list-inline li {
   padding-top: ($padding * 4);
 }
 
+.footer a {
+  color: $white;
+}
+
 .social-media {
   padding: $padding;
 }
 
 .social-media a {
   padding: 0 ($padding - 0.5);
-  color: $white;
 }
 
 .social-media a:hover {
