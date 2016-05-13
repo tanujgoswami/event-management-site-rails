@@ -1,4 +1,4 @@
-<%= render partial: 'header.html.erb' %>
+<%= render partial: 'header' %>
 
 <h1>Listing Events</h1>
 
@@ -8,10 +8,12 @@
     <% end %>
   </div>
 
-  <%= render partial: 'search_events.html.erb' %>
+  <%= render partial: 'search_events' %>
 
-  <%= render partial: 'search_results.html.erb' %>
+  <%= render partial: 'search_results' %>
 
 <br>
 
 <%= link_to 'New Event', new_event_path %>
+
+  <%= render partial: 'footer' %>
