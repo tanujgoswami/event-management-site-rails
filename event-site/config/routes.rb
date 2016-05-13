@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'tags/:tag', to: 'events#index', as: :tag
 
+  root 'events#index'
+
   devise_for :users
   resources :events do
     get :join, to: 'events#join', as: 'join'
