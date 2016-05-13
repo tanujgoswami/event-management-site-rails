@@ -1,0 +1,16 @@
+@import "components/_variables.scss";
+
+.btn {
+  text-transform: uppercase;
+}
+
+.btn-success {
+  background: $em-primary;
+  border-color: $em-primary;
+  color: $white;
+}
+
+.btn-success:hover {
+  background: $em-dark-primary;
+  border-color: $em-dark-primary
+}

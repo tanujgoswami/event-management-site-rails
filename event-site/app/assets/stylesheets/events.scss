@@ -1,3 +1,38 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "components/_variables.scss";
+@import "components/_buttons.scss";
+@import "components/_well.scss";
+
+//HEADER STYLING
+
+.container {
+  padding: 0 100px;
+}
+
+.header {
+  margin-top: ($margin * 2);
+}
+
+.header a {
+  color: $em-black;
+  font-weight: bold;
+}
+
+.header a:hover {
+  color: $em-grey;
+}
+
+.header-nav {
+  margin-bottom: ($margin * 2);
+}
+
+.header ul {
+  margin-bottom: 0;
+}
+
+header ul.list-inline li {
+  margin-right: ($margin * 1.25);
+}
