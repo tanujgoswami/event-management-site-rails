@@ -1,10 +1,18 @@
 <div class="container">
   <div class="header">
-    <% if user_signed_in? %>
-      <%= link_to 'My Events', user_path(current_user.id) %>
-      <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Log in', new_user_session_path %>
-    <% end %>
+    <div class="header-nav">
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="list-inline">
+            <% if user_signed_in? %>
+              <li class="desktop-only"><%= link_to 'My Events', user_path(current_user.id) %></li>
+              <li class="desktop-only"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li class="desktop-only"><%= link_to 'Log in', new_user_session_path %><li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
