@@ -2,7 +2,7 @@ class EventSearchTerm
   attr_reader :where_clause, :where_args, :order
 
   def initialize(search_term)
-    search_term = search_term.downcase
+    search_term = search_term.downcase.strip
     @where_clause = ""
     @where_args = {}
     if search_term =~ /@/
