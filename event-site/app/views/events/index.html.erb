@@ -7,38 +7,9 @@
     <% end %>
   </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Location</th>
-      <th>Agenda</th>
-      <th>Address</th>
-      <th>Organizer</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <%= render partial: 'search_events.html.erb' %>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= l event.start_date, format: :date_format %></td>
-        <td><%= l event.end_date, format: :date_format %></td>
-        <td><%= event.location %></td>
-        <td><%= event.agenda %></td>
-        <td><%= event.address %></td>
-        <td><%= event.organizer_id %></td>
-        <td><%= raw tag_links(event.all_tags) %></td>
-        <td><%= link_to 'Show', event_path(event.id) %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <%= render partial: 'search_results.html.erb' %>
 
 <br>
 

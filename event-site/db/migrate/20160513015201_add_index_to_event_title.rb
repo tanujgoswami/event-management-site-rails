@@ -1,4 +1,4 @@
-class AddIndexToEvent < ActiveRecord::Migration
+class AddIndexToEventTitle < ActiveRecord::Migration
   def change
     add_index :events, :title
   end
