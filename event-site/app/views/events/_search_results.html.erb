@@ -1,0 +1,14 @@
+<section class="search-results">
+  <header>
+    <h1 class="h3">Results</h1>
+  </header>
+  <ol class="list-group">
+    <% @events.each do |event| %>
+      <li class="list-group-item">
+        <h2><%= event.title %></h2>
+        <h3><%= l event.created_at.to_date %></h3>
+        <h4><%= event.owner %></h4>
+      </li>
+    <% end %>
+  </ol>
+</section>
