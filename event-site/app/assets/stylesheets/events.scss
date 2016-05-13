@@ -22,3 +22,7 @@
 .header a:hover {
   color: $em-grey;
 }
+
+.header-nav {
+  margin-bottom: ($margin * 2);
+}
