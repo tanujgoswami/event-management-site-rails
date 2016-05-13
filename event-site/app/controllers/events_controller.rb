@@ -6,6 +6,13 @@ class EventsController < ApplicationController
   def index
     if params[:tag]
       @events = Event.tagged_with(params[:tag])
+    elsif params[:keywords].present?
+      @keywords= params[:keywords]
+      event_search_term = EventSearchTerm.new(@keywords)
+      @events = Event.where(
+          event_search_term.where_clause,
+          event_search_term.where_args).
+          order(event_search_term.order)
     else
       @events = Event.all
     end
