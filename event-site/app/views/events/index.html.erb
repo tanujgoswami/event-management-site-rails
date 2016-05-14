@@ -1,6 +1,6 @@
 <%= render partial: 'header' %>
 
-<h1>Listing Events</h1>
+  <h1>Search Events</h1>
 
   <div>
     <% tag_cloud Event.tag_counts, %w{smallest-tag small-tag medium-tag large-tag} do |tag, size_class| %>
@@ -11,9 +11,5 @@
   <%= render partial: 'search_events' %>
 
   <%= render partial: 'search_results' %>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
 
   <%= render partial: 'footer' %>

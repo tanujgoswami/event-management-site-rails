@@ -1,14 +1,31 @@
-<section class="search-results">
-  <header>
-    <h1 class="h3">Results</h1>
-  </header>
-  <ol class="list-group">
-    <% @events.each do |event| %>
-      <li class="list-group-item clearfix">
-        <h3 class="pull-right">Posted At: <%= l event.created_at.to_date %></h3>
-        <h2><%= event.title %></h2>
-        <h4><%= event.owner %></h4>
-      </li>
-    <% end %>
-  </ol>
-</section>
+<div class="event-title">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Listing Events</h1>
+    </div>
+    <div class="col-lg-6 create-event">
+      <ul class="list-inline pull-right">
+        <li>
+          <%= link_to '+ New Event', new_event_path,
+                                   class: "btn btn-success btn-lg" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="search-results">
+  <div class="row">
+    <div class="col-lg-6">
+      <ul class="list-group">
+        <% @events.each do |event| %>
+          <li class="list-group-item clearfix">
+            <h3 class="pull-right">Posted At: <%= l event.created_at.to_date %></h4>
+            <h2><%= event.title %></h2>
+            <h4><%= event.owner %></h4>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
