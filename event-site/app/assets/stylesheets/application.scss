@@ -18,6 +18,12 @@
  *= require font-awesome
  */
 
+@import "components/_variables.scss";
+
+ h1 {
+   padding-bottom: ($padding * 0.5);
+ }
+
 a {
   text-decoration: none;
 }

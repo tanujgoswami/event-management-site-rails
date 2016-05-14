@@ -1,6 +1,6 @@
 <%= render partial: 'header' %>
 
-  <h1>Search Events</h1>
+  <h1 id="search-events-header">Search Events</h1>
 
   <div>
     <% tag_cloud Event.tag_counts, %w{smallest-tag small-tag medium-tag large-tag} do |tag, size_class| %>
