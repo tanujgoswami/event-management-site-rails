@@ -2,12 +2,6 @@
 
   <h1 id="search-events-header">Search Events</h1>
 
-  <div>
-    <% tag_cloud Event.tag_counts, %w{smallest-tag small-tag medium-tag large-tag} do |tag, size_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: size_class %>
-    <% end %>
-  </div>
-
   <%= render partial: 'search_events' %>
 
   <%= render partial: 'search_results' %>
