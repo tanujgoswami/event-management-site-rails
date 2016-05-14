@@ -1,17 +1,11 @@
-<%= render partial: 'header.html.erb' %>
+<%= render partial: 'header' %>
 
-<h1>Listing Events</h1>
+  <h1 id="search-events-header">Search Events</h1>
 
-  <div>
-    <% tag_cloud Event.tag_counts, %w{smallest-tag small-tag medium-tag large-tag} do |tag, size_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: size_class %>
-    <% end %>
-  </div>
+  <%= render partial: 'search_events' %>
 
-  <%= render partial: 'search_events.html.erb' %>
+  <%= render partial: 'search_results' %>
 
-  <%= render partial: 'search_results.html.erb' %>
+  <%= render partial: 'tag_cloud_sidebar' %>
 
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+  <%= render partial: 'footer' %>

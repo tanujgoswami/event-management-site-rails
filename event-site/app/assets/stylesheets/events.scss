@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "components/_typography.scss";
 @import "components/_variables.scss";
 @import "components/_buttons.scss";
 @import "components/_well.scss";
@@ -19,6 +20,7 @@
 .header a {
   color: $em-black;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .header a:hover {
@@ -35,4 +37,44 @@
 
 header ul.list-inline li {
   margin-right: ($margin * 1.25);
+}
+
+//SEARCH SECTION
+
+.event-title {
+  border-bottom: ($border-size * 5) $border-type $border-color;
+  padding-bottom: $padding;
+}
+
+.create-event {
+  line-height: 36px;
+}
+
+//FOOTER STYLING
+
+.footer {
+  text-align: center;
+  color: $white;
+  background-color: $em-primary;
+  padding-top: ($padding * 4);
+}
+
+.footer a {
+  color: $white;
+}
+
+.social-media {
+  padding: $padding;
+}
+
+.social-media a {
+  padding: 0 ($padding - 0.5);
+}
+
+.social-media a:hover {
+  color: $grey;
+}
+
+.fa {
+  color: $white;
 }

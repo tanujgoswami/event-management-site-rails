@@ -10,8 +10,20 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require 'bootstrap-sass-official'
  *= require_tree .
  *= require_self
- *= require 'bootstrap-sass-official'
  *= require tags
+ *= require events
+ *= require font-awesome
  */
+
+@import "components/_variables.scss";
+
+ h1 {
+   padding-bottom: ($padding * 0.5);
+ }
+
+a {
+  text-decoration: none;
+}

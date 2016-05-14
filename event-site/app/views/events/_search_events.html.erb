@@ -2,18 +2,16 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="well">
-        <section class="search-form">
-          <%= form_for :events, method: :get do |f| %>
-            <div class="input-group input-group-lg">
-              <%= label_tag :keywords, nil, class: "sr-only" %>
-              <%= text_field_tag :keywords, nil, placeholder: "Search events by title",
-                                                 class: "form-control input-lg" %>
-              <span class="input-group-btn">
-                <%= submit_tag "Search", class: "btn btn-success btn-lg" %>
-              </span>
-            </div>
-          <% end %>
-        </section>
+        <%= form_for :events, method: :get do |f| %>
+          <div class="input-group">
+            <%= label_tag :keywords, nil, class: "sr-only" %>
+            <%= text_field_tag :keywords, nil, placeholder: "Search events by title",
+                                               class: "form-control input-lg" %>
+            <span class="input-group-btn">
+              <%= submit_tag "Search", class: "btn btn-success btn-lg" %>
+            </span>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

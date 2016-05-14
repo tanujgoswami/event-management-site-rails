@@ -1,0 +1,19 @@
+@import "components/_variables.scss";
+
+h1 {
+  font-family: $heading-copy;
+  margin: 0;
+  color: $em-primary;
+  font-weight: 300;
+}
+
+h2 {
+  font-family: $body-copy;
+  color: $em-primary;
+}
+
+h5 {
+  color: $em-grey;
+  text-transform: uppercase;
+  font-weight: 700;
+}
